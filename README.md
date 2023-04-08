@@ -1,67 +1,10 @@
 # HashMap
-HashMap in Java with Examples
 HashMap<K, V> is a part of Java’s collection since Java 1.2. This class is found in java.util package. It provides the basic implementation of the Map interface of Java. It stores the data in (Key, Value) pairs, and you can access them by an index of another type (e.g. an Integer). One object is used as a key (index) to another object (value). If you try to insert the duplicate key, it will replace the element of the corresponding key.
 
 HashMap is similar to HashTable, but it is unsynchronized. It allows to store the null keys as well, but there should be only one null key object and there can be any number of null values.  This class makes no guarantees as to the order of the map. To use this class and its methods, you need to import java.util.HashMap package or its superclass.
-
-
-// Java program to illustrate HashMap class of java.util
-// package
- 
-// Importing HashMap class
-import java.util.HashMap;
- 
-// Main class
-public class GFG {
- 
-    // Main driver method
-    public static void main(String[] args)
-    {
-        // Create an empty hash map by declaring object
-        // of string and integer type
-        HashMap<String, Integer> map = new HashMap<>();
- 
-        // Adding elements to the Map
-        // using standard put() method
-        map.put("vishal", 10);
-        map.put("sachin", 30);
-        map.put("vaibhav", 20);
- 
-        // Print size and content of the Map
-        System.out.println("Size of map is:- "
-                           + map.size());
- 
-        // Printing elements in object of Map
-        System.out.println(map);
- 
-        // Checking if a key is present and if
-        // present, print value by passing
-        // random element
-        if (map.containsKey("vishal")) {
- 
-            // Mapping
-            Integer a = map.get("vishal");
- 
-            // Printing value for the corresponding key
-            System.out.println("value for key"
-                               + " \"vishal\" is:- " + a);
-        }
-    }
-}
-Output
-Size of map is:- 3
-{vaibhav=20, vishal=10, sachin=30}
-value for key "vishal" is:- 10
-
-![Capture](https://user-images.githubusercontent.com/99464989/230598555-1bdb4341-f392-4b36-9814-1669e0982d7c.PNG)
- Syntax: Declaration
-
-public class HashMap<K,V> extends AbstractMap<K,V>
-                          implements Map<K,V>, Cloneable, Serializable
-Parameters: It takes two parameters namely as follows:
-
-The type of keys maintained by this map
-The type of mapped values
+![Capture](https://user-images.githubusercontent.com/99464989/230715250-75d7eef2-4484-4842-b02b-14adb09568b9.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715274-05e094d8-212a-4eaf-a805-5cff01c2079e.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715298-69399275-c888-4232-9cff-554f3120a0d8.PNG)
 HashMap implements Serializable, Cloneable, Map<K, V> interfaces. HashMap extends AbstractMap<K, V> class. The direct subclasses are LinkedHashMap, PrinterStateReasons.
 
  
@@ -78,45 +21,8 @@ Allows duplicates: HashMaps allow for duplicate values, but not duplicate keys. 
 Thread-unsafe: HashMaps are not thread-safe, which means that if multiple threads access the same hashmap simultaneously, it can lead to data inconsistencies. If thread safety is required, ConcurrentHashMap can be used.
 Capacity and load factor: HashMaps have a capacity, which is the number of elements that it can hold, and a load factor, which is the measure of how full the hashmap can be before it is resized.
 Here is an example of creating a HashMap in Java:
-
-import java.util.HashMap;
- 
-public class ExampleHashMap {
-   public static void main(String[] args) {
-       
-      // Create a HashMap
-      HashMap<String, Integer> hashMap = new HashMap<>();
-       
-      // Add elements to the HashMap
-      hashMap.put("John", 25);
-      hashMap.put("Jane", 30);
-      hashMap.put("Jim", 35);
-       
-      // Access elements in the HashMap
-      System.out.println(hashMap.get("John")); // Output: 25
-       
-      // Remove an element from the HashMap
-      hashMap.remove("Jim");
-       
-      // Check if an element is present in the HashMap
-      System.out.println(hashMap.containsKey("Jim")); // Output: false
-       
-      // Get the size of the HashMap
-      System.out.println(hashMap.size()); // Output: 2
-   }
-}
-Output
-25
-false
-2
-Constructors in HashMap is as follows:
-HashMap provides 4 constructors and the access modifier of each is public which are listed as follows:
-
-HashMap()
-HashMap(int initialCapacity)
-HashMap(int initialCapacity, float loadFactor)
-HashMap(Map map)
-Now discussing above constructors one by one alongside implementing the same with help of clean java programs.
+![Capture](https://user-images.githubusercontent.com/99464989/230715335-2798e37e-ee87-4030-9d14-9931bc0be8e2.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715353-fc0352c7-e3bb-4e6c-a629-ff35bd4f96cd.PNG)
 Constructor 1: HashMap()
 
 It is the default constructor which creates an instance of HashMap with an initial capacity of 16 and load factor of 0.75.
@@ -125,109 +31,11 @@ Syntax:
 
 HashMap<K, V> hm = new HashMap<K, V>();
 Example
+![Capture](https://user-images.githubusercontent.com/99464989/230715379-2609cc70-1307-480a-87b1-93323173dbfc.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715393-4eeef7f1-3ba8-418d-a9b5-8cc704f3969f.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715411-54faa158-28f7-4e4e-9501-764fd87c2415.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715421-2677856e-a814-4919-a457-8ca1face6101.PNG)
 
- 
-
-// Java program to Demonstrate the HashMap() constructor
- 
-// Importing basic required classes
-import java.io.*;
-import java.util.*;
- 
-// Main class
-// To add elements to HashMap
-class GFG {
- 
-    // Main driver method
-    public static void main(String args[])
-    {
-        // No need to mention the
-        // Generic type twice
-        HashMap<Integer, String> hm1 = new HashMap<>();
- 
-        // Initialization of a HashMap using Generics
-        HashMap<Integer, String> hm2
-            = new HashMap<Integer, String>();
- 
-        // Adding elements using put method
-        // Custom input elements
-        hm1.put(1, "one");
-        hm1.put(2, "two");
-        hm1.put(3, "three");
- 
-        hm2.put(4, "four");
-        hm2.put(5, "five");
-        hm2.put(6, "six");
- 
-        // Print and display mapping of HashMap 1
-        System.out.println("Mappings of HashMap hm1 are : "
-                           + hm1);
- 
-        // Print and display mapping of HashMap 2
-        System.out.println("Mapping of HashMap hm2 are : "
-                           + hm2);
-    }
-}
-Output
-Mappings of HashMap hm1 are : {1=one, 2=two, 3=three}
-Mapping of HashMap hm2 are : {4=four, 5=five, 6=six}
-Constructor 2: HashMap(int initialCapacity)
-
-It creates a HashMap instance with a specified initial capacity and load factor of 0.75.
-
-Syntax:
-
-HashMap<K, V> hm = new HashMap<K, V>(int initialCapacity);
-Example
-
-
-// Java program to Demonstrate
-// HashMap(int initialCapacity) Constructor
- 
-// Importing basic classes
-import java.io.*;
-import java.util.*;
- 
-// Main class
-// To add elements to HashMap
-class AddElementsToHashMap {
- 
-    // Main driver method
-    public static void main(String args[])
-    {
-        // No need to mention the
-        // Generic type twice
-        HashMap<Integer, String> hm1 = new HashMap<>(10);
- 
-        // Initialization of a HashMap using Generics
-        HashMap<Integer, String> hm2
-            = new HashMap<Integer, String>(2);
- 
-        // Adding elements to object of HashMap
-        // using put method
- 
-        // HashMap 1
-        hm1.put(1, "one");
-        hm1.put(2, "two");
-        hm1.put(3, "three");
- 
-        // HashMap 2
-        hm2.put(4, "four");
-        hm2.put(5, "five");
-        hm2.put(6, "six");
- 
-        // Printing elements of HashMap 1
-        System.out.println("Mappings of HashMap hm1 are : "
-                           + hm1);
- 
-        // Printing elements of HashMap 2
-        System.out.println("Mapping of HashMap hm2 are : "
-                           + hm2);
-    }
-}
-Output
-Mappings of HashMap hm1 are : {1=one, 2=two, 3=three}
-Mapping of HashMap hm2 are : {4=four, 5=five, 6=six}
 Constructor 3: HashMap(int initialCapacity, float loadFactor)
 
 It creates a HashMap instance with a specified initial capacity and specified load factor.
@@ -236,246 +44,20 @@ Syntax:
 
 HashMap<K, V> hm = new HashMap<K, V>(int initialCapacity, float loadFactor);
 Example
-
-
-// Java program to Demonstrate
-// HashMap(int initialCapacity,float loadFactor) Constructor
- 
-// Importing basic classes
-import java.io.*;
-import java.util.*;
- 
-// Main class
-// To add elements to HashMap
-class GFG {
- 
-    // Main driver method
-    public static void main(String args[])
-    {
-        // No need to mention the generic type twice
-        HashMap<Integer, String> hm1
-            = new HashMap<>(5, 0.75f);
- 
-        // Initialization of a HashMap using Generics
-        HashMap<Integer, String> hm2
-            = new HashMap<Integer, String>(3, 0.5f);
- 
-        // Add Elements using put() method
-        // Custom input elements
-        hm1.put(1, "one");
-        hm1.put(2, "two");
-        hm1.put(3, "three");
- 
-        hm2.put(4, "four");
-        hm2.put(5, "five");
-        hm2.put(6, "six");
- 
-        // Print and display elements in object of hashMap 1
-        System.out.println("Mappings of HashMap hm1 are : "
-                           + hm1);
- 
-        // Print and display elements in object of hashMap 2
-        System.out.println("Mapping of HashMap hm2 are : "
-                           + hm2);
-    }
-}
-Output
-Mappings of HashMap hm1 are : {1=one, 2=two, 3=three}
-Mapping of HashMap hm2 are : {4=four, 5=five, 6=six}
- 4. HashMap(Map map): It creates an instance of HashMap with the same mappings as the specified map.
-
-HashMap<K, V> hm = new HashMap<K, V>(Map map);
-
-
-// Java program to demonstrate the
-// HashMap(Map map) Constructor
- 
-import java.io.*;
-import java.util.*;
- 
-class AddElementsToHashMap {
-    public static void main(String args[])
-    {
-        // No need to mention the
-        // Generic type twice
-        Map<Integer, String> hm1 = new HashMap<>();
- 
-        // Add Elements using put method
-        hm1.put(1, "one");
-        hm1.put(2, "two");
-        hm1.put(3, "three");
- 
-        // Initialization of a HashMap
-        // using Generics
-        HashMap<Integer, String> hm2
-            = new HashMap<Integer, String>(hm1);
- 
-        System.out.println("Mappings of HashMap hm1 are : "
-                           + hm1);
-       
-        System.out.println("Mapping of HashMap hm2 are : "
-                           + hm2);
-    }
-}
-Output
-Mappings of HashMap hm1 are : {1=one, 2=two, 3=three}
-Mapping of HashMap hm2 are : {1=one, 2=two, 3=three}
- 
-
+![Capture](https://user-images.githubusercontent.com/99464989/230715456-70715456-2304-4602-b2b0-54e68add2f63.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715466-77acf784-c7ca-4ac3-b9d3-225e81e344cb.PNG)
+![Capture](https://user-images.githubusercontent.com/99464989/230715484-c5ea4f7d-5af3-4463-a965-9e6bedc4cbff.PNG)
 Performing Various Operations on HashMap
 1. Adding Elements: In order to add an element to the map, we can use the put() method. However, the insertion order is not retained in the Hashmap. Internally, for every element, a separate hash is generated and the elements are indexed based on this hash to make it more efficient.
-
-
-// Java program to add elements
-// to the HashMap
- 
-import java.io.*;
-import java.util.*;
- 
-class AddElementsToHashMap {
-    public static void main(String args[])
-    {
-        // No need to mention the
-        // Generic type twice
-        HashMap<Integer, String> hm1 = new HashMap<>();
- 
-        // Initialization of a HashMap
-        // using Generics
-        HashMap<Integer, String> hm2
-            = new HashMap<Integer, String>();
- 
-        // Add Elements using put method
-        hm1.put(1, "Geeks");
-        hm1.put(2, "For");
-        hm1.put(3, "Geeks");
- 
-        hm2.put(1, "Geeks");
-        hm2.put(2, "For");
-        hm2.put(3, "Geeks");
- 
-        System.out.println("Mappings of HashMap hm1 are : "
-                           + hm1);
-        System.out.println("Mapping of HashMap hm2 are : "
-                           + hm2);
-    }
-}
-Output
-Mappings of HashMap hm1 are : {1=Geeks, 2=For, 3=Geeks}
-Mapping of HashMap hm2 are : {1=Geeks, 2=For, 3=Geeks}
+![Capture](https://user-images.githubusercontent.com/99464989/230715525-3bfb8fb9-3474-4f15-8958-4a494273a59a.PNG)
 2. Changing Elements: After adding the elements if we wish to change the element, it can be done by again adding the element with the put() method. Since the elements in the map are indexed using the keys, the value of the key can be changed by simply inserting the updated value for the key for which we wish to change.
-
-
-// Java program to change
-// elements of HashMap
- 
-import java.io.*;
-import java.util.*;
-class ChangeElementsOfHashMap {
-    public static void main(String args[])
-    {
- 
-        // Initialization of a HashMap
-        HashMap<Integer, String> hm
-            = new HashMap<Integer, String>();
- 
-        // Change Value using put method
-        hm.put(1, "Geeks");
-        hm.put(2, "Geeks");
-        hm.put(3, "Geeks");
- 
-        System.out.println("Initial Map " + hm);
- 
-        hm.put(2, "For");
- 
-        System.out.println("Updated Map " + hm);
-    }
-}
-Output
-Initial Map {1=Geeks, 2=Geeks, 3=Geeks}
-Updated Map {1=Geeks, 2=For, 3=Geeks}
+![Capture](https://user-images.githubusercontent.com/99464989/230715541-8714ee6b-a649-4858-8942-7ae6fe9b50c4.PNG)
 3. Removing Element: In order to remove an element from the Map, we can use the remove() method. This method takes the key value and removes the mapping for a key from this map if it is present in the map.
-
-
-// Java program to remove
-// elements from HashMap
- 
-import java.io.*;
-import java.util.*;
-class RemoveElementsOfHashMap{
-    public static void main(String args[])
-    {
-        // Initialization of a HashMap
-        Map<Integer, String> hm
-            = new HashMap<Integer, String>();
- 
-        // Add elements using put method
-        hm.put(1, "Geeks");
-        hm.put(2, "For");
-        hm.put(3, "Geeks");
-        hm.put(4, "For");
- 
-        // Initial HashMap
-        System.out.println("Mappings of HashMap are : "
-                           + hm);
- 
-        // remove element with a key
-        // using remove method
-        hm.remove(4);
- 
-        // Final HashMap
-        System.out.println("Mappings after removal are : "
-                           + hm);
-    }
-}
-Output
-Mappings of HashMap are : {1=Geeks, 2=For, 3=Geeks, 4=For}
-Mappings after removal are : {1=Geeks, 2=For, 3=Geeks}
- 
- 
-
-Output
-Mappings of HashMap are : {1=Geeks, 2=For, 3=Geeks, 4=For}
-Mappings after removal are : {1=Geeks, 2=For, 3=Geeks}
+![Capture](https://user-images.githubusercontent.com/99464989/230715562-b296d248-8de2-4fb9-b7e7-194343adb563.PNG)
 4. Traversal of HashMap
 
 We can use the Iterator interface to traverse over any structure of the Collection Framework. Since Iterators work with one type of data we use Entry< ? , ? > to resolve the two separate types into a compatible format. Then using the next() method we print the entries of HashMap.
-
-
-// Java program to traversal a
-// Java.util.HashMap
- 
-import java.util.HashMap;
-import java.util.Map;
- 
-public class TraversalTheHashMap {
-    public static void main(String[] args)
-    {
-        // initialize a HashMap
-        HashMap<String, Integer> map = new HashMap<>();
- 
-        // Add elements using put method
-        map.put("vishal", 10);
-        map.put("sachin", 30);
-        map.put("vaibhav", 20);
- 
-        // Iterate the map using
-        // for-each loop
-        for (Map.Entry<String, Integer> e : map.entrySet())
-            System.out.println("Key: " + e.getKey()
-                               + " Value: " + e.getValue());
-    }
-}
-Output
-Key: vaibhav Value: 20
-Key: vishal Value: 10
-Key: sachin Value: 30
- 
- 
-
-Output
-Key: vaibhav Value: 20
-Key: vishal Value: 10
-Key: sachin Value: 30
+![Capture](https://user-images.githubusercontent.com/99464989/230715591-f21da98a-0278-4745-a4a7-8ff84e08d2d4.PNG)
 Important Features of HashMap
 To access a value one must know its key. HashMap is known as HashMap because it uses a technique called Hashing. Hashing is a technique of converting a large String to small String that represents the same String. A shorter value helps in indexing and faster searches. HashSet also uses HashMap internally.
 Few important features of HashMap are: 
